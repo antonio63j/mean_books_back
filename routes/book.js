@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET SINGLE BOOK BY ID */
-router.get('/:id', function(req, res, next) {
+// router.get('/:id', function(req, res, next) {
+router.get('/book/:id', function(req, res, next) {
   Book.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.json(post);
