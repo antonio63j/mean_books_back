@@ -5,6 +5,7 @@ var Book = require('../models/Book.js');
 
 /* GET ALL BOOKS */
 router.get('/', function(req, res, next) {
+  console.log("get / : todos los libros");
   Book.find(function (err, products) {
     if (err) return next(err);
     res.json(products);
@@ -21,7 +22,8 @@ router.get('/book/:id', function(req, res, next) {
 });
 
 /* SAVE BOOK */
-router.post('/', function(req, res, next) {
+router.post('/book/', function(req, res, next) {
+  console.log("en save book");
   Book.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
